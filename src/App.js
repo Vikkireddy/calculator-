@@ -1,8 +1,10 @@
 import React , { useState, useEffect, useRef} from "react";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import{FiDelete} from 'react-icons/fi'
 import {AiFillDelete} from 'react-icons/ai'
 import {VscDiffAdded} from 'react-icons/vsc'
+import Card from 'react-bootstrap/Card'
  
 function App() {
   const [result, setResult ]=useState("");
@@ -44,13 +46,30 @@ setResult("");
         <button name="2"onClick={handleClick}>2</button>
         <button name="3"onClick={handleClick}>3</button>
         <button id="bacspace" onClick={backspace}><FiDelete/></button>
-        <button onClick={handleClick}>0</button>
+        <button name="0" onClick={handleClick}>0</button>
         <button id="clear" onClick={clear}><AiFillDelete/></button>
         <button id="addticket" ><VscDiffAdded/>Add Ticket</button>
-        
       </div>
+        <div className="mt-4">
+          <p>You Selected Tickets </p>
+        <div className="row">
+        <Card className="w-50 mx-0"> <AiFillDelete className="delete"/>
+          <Card.Body> 
+            <p>Ticket #0</p>
 
+          </Card.Body>
+        </Card>
+        <Card className="w-50"><AiFillDelete className="delete"onClick={clear}/>
+          <Card.Body> 
+            <p>Ticket #1</p>
+
+          </Card.Body>
+        </Card>
+
+        </div>
+        </div>
      </div>
+
    )
 }
 
