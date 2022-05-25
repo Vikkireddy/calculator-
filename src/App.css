@@ -28,3 +28,10 @@ button{
   background-color: #FFF;
   border-width: 0.1px;
 }
+
+.delete{
+  position: relative;
+  bottom: 10px;
+  justify-content: end;
+  color:red;
+}
